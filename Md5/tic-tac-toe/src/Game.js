@@ -70,7 +70,7 @@ const Game = () => {
               ? `Winner: ${winner}`
               : `Next Player: ${xIsNext ? "X" : "O"}`}
           </Text>
-          <List>{renderMoves()}</List>
+          {/* <List>{renderMoves()}</List> */}
           <Button mt={4} colorScheme="teal" onClick={resetGame}>
             Restart Game
           </Button>
