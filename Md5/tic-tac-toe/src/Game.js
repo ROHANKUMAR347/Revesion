@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Box, Button, VStack, Text, List, ListItem } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  VStack,
+  Text,
+  List,
+  ListItem,
+  Flex,
+} from "@chakra-ui/react";
 import Board from "./Board";
 
 const Game = () => {
@@ -47,18 +55,28 @@ const Game = () => {
   };
 
   return (
-    <VStack spacing={8}>
-      <Board squares={current} onClick={handleClick} />
-      <Box>
-        <Text fontSize="xl">
-          {winner ? `Winner: ${winner}` : `Next Player: ${xIsNext ? "X" : "O"}`}
-        </Text>
-        <List>{renderMoves()}</List>
-        <Button mt={4} colorScheme="teal" onClick={resetGame}>
-          Restart Game
-        </Button>
-      </Box>
-    </VStack>
+    <Flex
+      direction={{ base: "column", md: "row" }}
+      align="center"
+      justify="center"
+      minH="100vh"
+      p={4}
+    >
+      <VStack spacing={8}>
+        <Board squares={current} onClick={handleClick} />
+        <Box textAlign="center">
+          <Text fontSize="xl">
+            {winner
+              ? `Winner: ${winner}`
+              : `Next Player: ${xIsNext ? "X" : "O"}`}
+          </Text>
+          <List>{renderMoves()}</List>
+          <Button mt={4} colorScheme="teal" onClick={resetGame}>
+            Restart Game
+          </Button>
+        </Box>
+      </VStack>
+    </Flex>
   );
 };
 
