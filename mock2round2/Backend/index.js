@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 });
 app.use("/auth", authrouter);
 app.use("/api", countryRouter);
-
+// server
 app.listen(PORT, async () => {
   try {
     await connectToDB();

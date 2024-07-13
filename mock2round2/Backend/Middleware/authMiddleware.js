@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-
+// middlewere
 const User = require("../Models/User");
 const secret = process.env.JWT_SECRET;
 module.exports = async (req, res, next) => {

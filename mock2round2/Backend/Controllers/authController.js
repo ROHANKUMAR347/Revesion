@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 
 const secret = process.env.JWT_SECRET;
 const User = require("../Models/User");
-
+// register
 exports.register = async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -15,7 +15,7 @@ exports.register = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
-
+// login
 exports.login = async (req, res) => {
   try {
     const { username, password } = req.body;

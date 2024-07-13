@@ -1,6 +1,6 @@
 const FavoriteCountry = require("../Models/FavoriteCountry");
 const User = require("../Models/User");
-
+// add fevoraite
 exports.addFavoriteCountry = async (req, res) => {
   const { countryName, countryCode } = req.body;
   try {
